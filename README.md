@@ -49,8 +49,19 @@ The project follows a structured machine learning workflow:
     * **Default Hyperparameters vs. Tuned Hyperparameters:** Showing the impact of hyperparameter optimization on model accuracy.
     * **Kaggle Submission:** Submitting predictions to the Kaggle competition platform via Enefit's provided time-series API to assess performance in a realistic forecasting scenario.
 
-## Repository Structure
+# Running the Model
+Open the Jupyter Notebook: `jupyter notebook Model.ipynb`. Use code with caution.
+## Execute the Notebook Cells
+Run the cells sequentially in Model.ipynb to perform data loading, feature engineering, model training, evaluation, and generate results. The notebook is structured to guide you through each step of the process.
+## Review Results
+The notebook will output key performance metrics (MAE) and visualizations. Examine the results to understand the model's performance and the impact of different feature engineering and hyperparameter tuning strategies.
+## Results Summary
+The XGBoost model, particularly with engineered features and optimized hyperparameters, demonstrates significant improvement in forecasting prosumer energy behavior. Key findings include:
 
-├── Model.ipynb <- Jupyter Notebook containing data exploration, feature engineering, model training, and evaluation.
-├── README.md <- This README file.
-└── requirements.txt <- List of Python dependencies for the project.
+* **Feature Engineering Importance:** Temporal features (day of year, day of week), lagged energy variables, and weather feature aggregation significantly enhance model accuracy.
+
+* **Hyperparameter Tuning Benefits:** Grid search optimization of XGBoost hyperparameters leads to a further reduction in MAE and improved generalization.
+
+* **Best Model Performance:** The model with selected features (V3) and tuned hyperparameters achieved the lowest Mean Absolute Error (MAE) of **60.26** on the validation set and a Kaggle submission score of **102.1**.
+
+* **Key Feature Insights:** Feature importance analysis revealed that `D_year` (day of year), `Eic` (aggregated consumption points), `D_week` (day of week), solar radiation forecasts, and installed photovoltaic capacity (`Cap`) are among the most influential features for predicting prosumer energy behavior. (Refer to Figure 3 in the paper for detailed feature importance).
