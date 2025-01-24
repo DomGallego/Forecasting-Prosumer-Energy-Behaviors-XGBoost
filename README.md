@@ -15,6 +15,8 @@
 ## Overview
 Energy imbalance—caused by discrepancies between expected and actual energy usage—is a growing concern. Prosumers (consumers who also produce energy, such as via solar panels) can introduce unpredictability into the grid. This project leverages **XGBoost** to forecast prosumer energy behaviors, aiming to mitigate imbalance costs and enhance grid stability.
 
+[View the Kaggle Competition](https://www.kaggle.com/competitions/predict-energy-behavior-of-prosumers)
+
 **Key Objectives**  
 - Develop an XGBoost-based prediction model incorporating prosumer behavior, weather data, and price signals.  
 - Predict energy production and consumption for Estonian prosumers with solar panels.  
